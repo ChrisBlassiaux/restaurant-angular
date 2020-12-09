@@ -13,11 +13,17 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { HomeComponent } from './home/home.component';
 import { CarteComponent } from './carte/carte.component';
 import { ReserveComponent } from './reserve/reserve.component';
 import { ContactComponent } from './contact/contact.component';
+
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 const routes: Routes = [
   {
@@ -33,6 +39,10 @@ const routes: Routes = [
     path: 'contact', 
     component: ContactComponent
   }
+  // ,{
+    // path: 'dashboard', 
+    // component: MyDashboardComponent
+  // }
 ];
 
 @NgModule({
@@ -42,7 +52,8 @@ const routes: Routes = [
     HomeComponent,
     CarteComponent,
     ReserveComponent,
-    ContactComponent
+    ContactComponent,
+    MyDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,11 @@ const routes: Routes = [
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatGridListModule,
+    RouterModule.forRoot(routes),
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

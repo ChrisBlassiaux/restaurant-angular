@@ -1,0 +1,72 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="3" rowHeight="1000px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      
+      <mat-card class="dashboard-card" *ngIf="card.title == 'Burgers'">
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div *ngFor="let burger of burgers">
+            <hr>
+            <h2>
+              {{ burger.title }}
+            </h2>
+            <p>
+              {{ burger.description }} 
+            </p>
+            <p>
+              {{ burger.price }} €
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="dashboard-card" *ngIf="card.title == 'Pizzas'">
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div *ngFor="let pizza of pizzas">
+            <hr>
+            <h2>
+              {{ pizza.title }}
+            </h2>
+            <p>
+              {{ pizza.description }} 
+            </p>
+            <p>
+              {{ pizza.price }} €
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="dashboard-card" *ngIf="card.title == 'Galettes'">
+        <mat-card-header>
+          <mat-card-title>
+            {{ card.title }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div *ngFor="let galette of galettes">
+            <hr>
+            <h2>
+              {{ galette.title }}
+            </h2>
+            <p>
+              {{ galette.description }} 
+            </p>
+            <p>
+              {{ galette.price }} €
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
